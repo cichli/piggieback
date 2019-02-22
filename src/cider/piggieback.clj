@@ -222,9 +222,6 @@
                          #'ana/*cljs-warning-handlers* ana/*cljs-warning-handlers*
                          #'ana/*unchecked-if* ana/*unchecked-if*
                          #'env/*compiler* (get @session #'*cljs-compiler-env*)}
-                        ;; *repl-env* was added in CLJS 1.10.126
-                        (when-let [v (find-var 'cljs.repl/*repl-env*)]
-                          {v (get @session #'*cljs-repl-env*)})
                         @session
                         (when ns
                           {#'ana/*cljs-ns* (symbol ns)})
